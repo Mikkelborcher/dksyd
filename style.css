@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap");
 
 * {
   margin: 0;
@@ -30,10 +30,9 @@ h3 {
 .text-switch-animation div {
   animation: text-switch 18s infinite;
   text-align: center;
-  color: #bc21ef;
   font-size: 40px;
   line-height: 1;
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
 }
 
 @keyframes text-switch {
@@ -61,6 +60,7 @@ h3 {
   100% {
     transform: translateY(-280px);
   }
+}
 
 .line {
   width: 220px;
@@ -72,13 +72,13 @@ h3 {
 
 @media screen and (max-width: 767px) {
   h3 {
-  font-size: 2rem;
+    font-size: 2rem;
   }
 }
 
 @media screen and (max-width: 460px) {
   h3 {
-  color: #bc21ef;
-  font-size: 1.5rem;
+    color: #bc21ef;
+    font-size: 1.5rem;
   }
-} 
+}
