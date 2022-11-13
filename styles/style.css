@@ -6,7 +6,32 @@
 }
 
 body {
-  background: #000c12;
+  background: #fff;
+}
+
+.header {
+  display: flex;
+  margin: 1em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  max-width: 10%;
+  max-height: 10%;
+}
+
+.nav {
+  font-family: Raleway, Arial, Helvetica, sans-serif;
+}
+
+.btn {
+  max-width: 10%;
+  max-height: 10%;
+  padding: 1em 2em 1em 2em;
+}
+
+main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +39,7 @@ body {
 }
 
 h3 {
-  color: #fff;
+  color: rgb(40, 40, 40);
   text-align: center;
   font-size: 3rem;
   margin-bottom: 1rem;
@@ -30,6 +55,7 @@ h3 {
 .text-switch-animation div {
   animation: text-switch 18s infinite;
   text-align: center;
+  color: #bc21ef;
   font-size: 40px;
   line-height: 1;
   font-family: "Bebas Neue", cursive;
