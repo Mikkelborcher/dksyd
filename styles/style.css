@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #fff;
+  background: rgb(0, 162, 255);
 }
 
 .content {
@@ -18,7 +18,8 @@ body {
   margin-right: 20px;
 }
 
-.bgImage {
+/* Dette stykke er udskrevet fordi det er formularen til baggrundsbilledet. Jeg tester lige med baggrundsvideo i stedet.
+/*.bgImage {
   background-image: url(https://c.pxhere.com/images/00/af/38fa6ed6693e2605434b528c05e4-1575603.jpg!d);
   position: fixed;
   left: 0;
@@ -28,6 +29,16 @@ body {
   width: 100%;
   height: 100%;
   filter: blur(5px);
+}*/
+
+.bgHeroVideo {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .header {
@@ -97,24 +108,90 @@ h3 {
   font-family: "Bebas Neue", cursive;
 }
 
-.ctaBtn {
-  max-width: 20%;
-  align-self: center;
-  justify-self: center;
-  padding: 1em 2em 1em 2em;
-  border: none;
-  background-color: #ac343d;
-}
-
-.ctaBtn:hover {
-  background-color: #00426b;
-}
-
 .btnText {
-  color: #fff;
+  color: #000;
   text-decoration-line: none;
   font-family: "Bebas Neue", cursive;
   font-size: 3em;
+}
+
+.ctaBtnGlow-on-hover {
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  max-width: 20%;
+  padding: 1em 2em 1em 2em;
+  align-self: center;
+  justify-self: center;
+}
+
+.ctaBtnGlow-on-hover:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.ctaBtnGlow-on-hover:active {
+  color: #000;
+}
+
+.ctaBtnGlow-on-hover:active:after {
+  background: transparent;
+}
+
+.ctaBtnGlow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.ctaBtnGlow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 .sund {
