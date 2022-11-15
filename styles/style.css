@@ -79,7 +79,7 @@ body {
 .gridContainer {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   margin-top: 10%;
 }
 
@@ -97,6 +97,16 @@ h3 {
   text-shadow: 0 0 1px #f9f9f9, 0 0 2.5px #f9f9f9, 0 0 8px #f9f9f9,
     0 0 18.5px lightgrey, 0 0 38.5px lightgrey, 0 0 43.5px lightgrey,
     0 0 48.5px lightgrey, 0 0 73px lightgrey;
+  display: none;
+}
+
+.tagline {
+  align-self: center;
+  justify-self: center;
+  margin-top: -5em;
+  color: #fff;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.2em;
 }
 
 .ctaText {
@@ -109,7 +119,7 @@ h3 {
 }
 
 .btnText {
-  color: #000;
+  color: #fff;
   text-decoration-line: none;
   font-family: "Bebas Neue", cursive;
   font-size: 3em;
@@ -118,8 +128,7 @@ h3 {
 .ctaBtnGlow-on-hover {
   border: none;
   outline: none;
-  color: #fff;
-  background: #fff;
+  background: rgb(234, 0, 255);
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -128,6 +137,10 @@ h3 {
   padding: 1em 2em 1em 2em;
   align-self: center;
   justify-self: center;
+}
+
+.btnText:hover {
+  color: #fff;
 }
 
 .ctaBtnGlow-on-hover:before {
@@ -176,7 +189,7 @@ h3 {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: transparent;
   left: 0;
   top: 0;
   border-radius: 10px;
