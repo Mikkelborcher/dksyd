@@ -6,7 +6,26 @@
 }
 
 body {
-  background: rgb(0, 162, 255);
+	background: linear-gradient(
+		-45deg,
+		var(--g1),
+		var(--g2),
+		var(--g3),
+		var(--g4)
+	);
+	background-size: 500% 500%;
+	animation: gradient 15s ease infinite;
+	height: 150vh;
+}
+
+:root {
+	--h: 120deg;
+	--s: 50%;
+	--l: 65%;
+	--g1: hsl(200deg, 50%, 25%);
+	--g2: hsl(150deg, 50%, 25%);
+	--g3: hsl(200deg, 50%, 25%);
+	--g4: hsl(150deg, 50%, 25%);
 }
 
 .content {
@@ -14,8 +33,7 @@ body {
   left: 0;
   right: 0;
   z-index: 9999;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 3rem;
 }
 
 /* Dette stykke er udskrevet fordi det er formularen til baggrundsbilledet. Jeg tester lige med baggrundsvideo i stedet.
@@ -45,7 +63,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1em;
+  margin-bottom: 6em;
 }
 
 .header__logo {
@@ -73,14 +91,22 @@ body {
   display: flex;
   align-items: center;
   justify-self: center;
-  padding-left: 14%;
+  justify-content: center;
+  animation: margin 1s ease-in-out 7s;
+  animation-fill-mode: forwards;
 }
-
+/*
+@keyframes margin {
+  0% {
+    margin-left: 0em;
+  }
+  100% {
+    margin-left: 10em;
+  }
+}
+*/
 .gridContainer {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  margin-top: 10%;
+  margin-bottom: 6em;
 }
 
 h3 {
@@ -90,53 +116,96 @@ h3 {
   font-family: "Bebas Neue", cursive;
   align-self: center;
   justify-self: center;
+  letter-spacing: 0.05em;
 }
 
 .neonText {
   color: #fff;
-  text-shadow: 0 0 1px #f9f9f9, 0 0 2.5px #f9f9f9, 0 0 8px #f9f9f9,
-    0 0 18.5px lightgrey, 0 0 38.5px lightgrey, 0 0 43.5px lightgrey,
-    0 0 48.5px lightgrey, 0 0 73px lightgrey;
-  display: none;
+    animation: pulze 3s ease-in-out infinite;
+    animation-fill-mode: forwards;
+    text-align: right;
+
+}
+
+.digital {
+  width: fit-content;
+}
+
+@keyframes pulze {
+  0% {
+    text-shadow: 0 0 1px #f9f9f9, 0 0 1px #f9f9f9, 0 0 1px 
+    #f9f9f9, 0 0 3px lightgrey, 0 0 3px lightgrey, 0 0 3px
+     lightgrey, 0 0 6px lightgrey, 0 0 6px lightgrey;
+  }
+  50% {
+    text-shadow: 0 0 0px #f9f9f9, 0 0 0px #f9f9f9, 0 0 0px 
+    #f9f9f9, 0 0 0px lightgrey, 0 0 0px lightgrey, 0 0 0px
+     lightgrey, 0 0 0px lightgrey, 0 0 0px lightgrey;
+  }
+  100% {
+    text-shadow: 0 0 1px #f9f9f9, 0 0 1px #f9f9f9, 0 0 1px 
+    #f9f9f9, 0 0 3px lightgrey, 0 0 3px lightgrey, 0 0 3px
+     lightgrey, 0 0 6px lightgrey, 0 0 6px lightgrey;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-in 7s ;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  width: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    width: 0%;
+  }
+  100% {
+    opacity: 1;
+    width: 25%;
+  }
 }
 
 .tagline {
-  align-self: center;
-  justify-self: center;
-  margin-top: -5em;
   color: #fff;
   font-family: "Bebas Neue", cursive;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.075em;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .ctaText {
   color: #fff;
-  align-self: center;
-  justify-self: center;
   font-size: 2em;
   font-weight: 100;
-  font-family: "Bebas Neue", cursive;
+  font-family: helvetica;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .btnText {
   color: #fff;
   text-decoration-line: none;
-  font-family: "Bebas Neue", cursive;
-  font-size: 3em;
+  font-family: helvetica;
+  font-size: 1.25em;
 }
 
 .ctaBtnGlow-on-hover {
   border: none;
   outline: none;
-  background: rgb(234, 0, 255);
+  background: #ac343d;
   cursor: pointer;
-  position: relative;
   z-index: 0;
   border-radius: 10px;
-  max-width: 20%;
   padding: 1em 2em 1em 2em;
-  align-self: center;
-  justify-self: center;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.ctaContent {
+  margin-bottom: 6rem;
 }
 
 .btnText:hover {
@@ -208,51 +277,47 @@ h3 {
 }
 
 .sund {
-  color: red;
+--h: 120deg;
 }
-
 .sikker {
-  color: blue;
+--h: 180deg;
 }
-
 .værdi {
-  color: purple;
+--h: 260deg;
 }
-
 .klima {
-  color: green;
+--h: 320deg;
 }
-
 .omstil {
-  color: yellow;
+--h: 0deg;
 }
-
 .samf {
-  color: magenta;
+--h: 60deg;
 }
 
 .futu {
-  color: #fff;
+--l: 100%;
 }
 
 .text-switch-animation {
   overflow: hidden;
-  width: 360px;
   height: 80px;
-  margin: auto;
+
 }
 
 .text-switch-animation p {
-  animation: text-switch 18s;
+  animation: text-switch 8s;
   font-size: 5em;
   line-height: 1;
   font-weight: 600;
   font-family: "Bebas Neue", cursive;
+  color: hsl(var(--h), var(--s), var(--l));
+  letter-spacing: 0.05em;
 }
 
 @keyframes text-switch {
   0% {
-    transform: translateY(0px);
+    transform: translateY(-80px);
   }
   14.2% {
     transform: translateY(-80px);
@@ -288,4 +353,43 @@ h3 {
     color: #bc21ef;
     font-size: 1.5rem;
   }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.temaer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  margin-top: 1rem;
+}
+.tema__article {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 25px;
+
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.tema__headline {
+  font-family: 'Bebas neue', cursive;
+  font-size: 2.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.tema__content {
+  font-family: helvetica;
+  color: #fff;
+  line-height: 1.5rem;
 }
